@@ -31,7 +31,7 @@ const [data,setData] = useContext(DataContext);
 return(
   <div id = "cardContainer">
 
-    <button id="run" onClick={() => Fetch.fetchData(data,setData)}>Run</button>
+    
     <ConditionalRender/>
 
   </div>

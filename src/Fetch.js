@@ -5,13 +5,14 @@ import react from 'react';
 export default class Fetch{
 
 
-{/*Uses geocode API to fetch longitute and latitude data based on city and country selected*/}
-static fetchData =  async (state,setState) => {
+/*Uses geocode API to fetch longitute and latitude data based on city and country selected*/
+static fetchData =  async (state,setState,city,country) => {
 
 
-    const response = await fetch('http://open.mapquestapi.com/geocoding/v1/address?key=jsuGcsSCBdSwCpqdUr8lHquiJEr8lhDD&location=Rome,Italy')
+    const response = await fetch(`http://open.mapquestapi.com/geocoding/v1/address?key=jsuGcsSCBdSwCpqdUr8lHquiJEr8lhDD&location=${city},${country}`)
     let latLong = await response.json()
     Promise.resolve(latLong).then(() => {
+      console.log(latLong);
       let lat = latLong.results[0].locations[0].latLng.lat;
       let long = latLong.results[0].locations[0].latLng.lng;
       fetchWeather(lat,long,state,setState);
@@ -20,7 +21,7 @@ static fetchData =  async (state,setState) => {
   }
 }
 
-{/*Fetches weather data from the lat and longitute passed to the function, pushes the desired parts of the data to state*/}
+/*Fetches weather data from the lat and longitute passed to the function, pushes the desired parts of the data to state*/
 const fetchWeather =  async (lat,long,state,setState) => {
 
 
