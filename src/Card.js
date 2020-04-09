@@ -15,9 +15,9 @@ const [data,setData] = useContext(DataContext);
       data.length>0 ?
       data.map(item => (
         <div className="cardDisplay">
-        <h3>Temp: {data[0].Temp}</h3>
-        <h3>Feels like: {data[0].FeelsLike}</h3>
-        <h3>Humidity: {data[0].Humidity}</h3>
+        <h3>City: {item.name} / {item.sys.country}</h3>
+        <h3>Temp {item.main.temp}</h3>
+        <h3>Humidity: {item.main.humidity}</h3>
         </div>
       ))
       :
@@ -31,7 +31,7 @@ const [data,setData] = useContext(DataContext);
 return(
   <div id = "cardContainer">
 
-    
+
     <ConditionalRender/>
 
   </div>
