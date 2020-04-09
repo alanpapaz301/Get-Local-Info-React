@@ -5,7 +5,7 @@ import react from 'react';
 export default class Fetch{
 
 
-{/*Uses geocode API to fetch longitute and latitude data based on city and country selected*/}
+/*Uses geocode API to fetch longitute and latitude data based on city and country selected*/
 static fetchData =  async (state,setState) => {
 
 
@@ -20,7 +20,7 @@ static fetchData =  async (state,setState) => {
   }
 }
 
-{/*Fetches weather data from the lat and longitute passed to the function, pushes the desired parts of the data to state*/}
+/*Fetches weather data from the lat and longitute passed to the function, pushes the desired parts of the data to state*/
 const fetchWeather =  async (lat,long,state,setState) => {
 
 
