@@ -26,7 +26,7 @@ function Form(){
           null
       ))
       console.log(options);
-  }
+    }
   }
 
   function runFetch(){
@@ -56,7 +56,7 @@ function Form(){
                 options={options}
                 getOptionLabel={(option) => option.name}
                 style={{ width: 300, marginTop:10 }}
-                renderInput={(params) => <TextField {...params} label="Cities" variant="outlined" />}
+                renderInput={(params) => <TextField {...params} label="City" variant="outlined" />}
                 onChange={(e,v) => setSelectedCity(v)}
         />
 
