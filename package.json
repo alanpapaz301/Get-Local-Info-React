@@ -10,7 +10,9 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-live-clock": "^4.0.5",
+    "react-scripts": "3.4.1",
+    "tz-lookup": "^6.1.25"
   },
   "scripts": {
     "start": "react-scripts start",

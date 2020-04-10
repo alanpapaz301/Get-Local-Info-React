@@ -3,8 +3,16 @@
 display:flex;
 flex-direction: column;
 align-items: center;
-margin-top: 200px;
+margin-top: 100px;
 }
 .cardDisplay{
   border: 1px solid slateblue;
+  width:300px;
+}
+.liveClock{
+  font-size: 20px;
+  font-weight: bold;
+}
+#runBtn{
+  margin-top: 20px;
 }
