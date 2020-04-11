@@ -11,11 +11,17 @@ function Form(){
 
   const [data,setData] = useContext(DataContext);
   const [selectedCity,setSelectedCity] = useState(0);
+  const [cityOptions,setcityOptions] = useState([]);
+  const [cityInputText,setcityInputText] = useState("");
   let tempCity = null;
 
-  let options = [];
 
+
+
+
+  let options = [];
   function setOptions(country){
+    setcityInputText ("");
 
     if(country !=null){
 
@@ -25,8 +31,15 @@ function Form(){
           :
           null
       ))
+      setcityOptions(options);
       console.log(options);
     }
+  }
+
+
+  function cityChange(v){
+    setcityInputText(v.name)
+    setSelectedCity(v);
   }
 
   function runFetch(){
@@ -42,6 +55,7 @@ function Form(){
     <div id="formContainer">
       <form>
       <Autocomplete
+
             key={"countries"}
             id="countryList"
             options={CountryList}
@@ -51,13 +65,14 @@ function Form(){
             onChange={(e,v) => setOptions(v)}
       />
       <Autocomplete
+                inputValue = {cityInputText}
                 key={"cities"}
                 id="cityList"
-                options={options}
+                options={cityOptions}
                 getOptionLabel={(option) => option.name}
                 style={{ width: 300, marginTop:10 }}
                 renderInput={(params) => <TextField {...params} label="City" variant="outlined" />}
-                onChange={(e,v) => setSelectedCity(v)}
+                onChange={(e,v) => cityChange(v) }
         />
 
       </form>
