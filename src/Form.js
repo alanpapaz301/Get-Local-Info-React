@@ -13,7 +13,6 @@ function Form(){
   const [selectedCity,setSelectedCity] = useState(0);
   const [cityOptions,setcityOptions] = useState([]);
   const [cityInputText,setcityInputText] = useState("");
-  let tempCity = null;
 
 
 
@@ -49,8 +48,6 @@ function Form(){
 
 
 
-
-
   return(
     <div id="formContainer">
       <form>
@@ -66,6 +63,7 @@ function Form(){
       />
       <Autocomplete
                 inputValue = {cityInputText}
+                onInputChange = {(e,v) => setcityInputText(v) }
                 key={"cities"}
                 id="cityList"
                 options={cityOptions}

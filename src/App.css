@@ -1,18 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
+
+
 #cardContainer,#formContainer{
 
 display:flex;
 flex-direction: column;
 align-items: center;
 margin-top: 100px;
+
+}
+#cardContainer{
+  margin-bottom: 100px;
 }
 .cardDisplay{
   border: 1px solid slateblue;
-  width:300px;
+  width:700px;
+  text-align: center;
 }
 .liveClock{
-  font-size: 20px;
-  font-weight: bold;
+  margin-left: 10px;
 }
 #runBtn{
   margin-top: 20px;
+}
+.cardCity{
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 25px;
+  color:rgb(167,109,67);
+
+}
+.localTime{
+  align-items: center;
+  height:40px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.cardContent{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin:0;
 }
