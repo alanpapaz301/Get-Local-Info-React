@@ -3,6 +3,7 @@ import { DataContext } from "./DataContext";
 import Fetch from './Fetch.js';
 import TextField from '@material-ui/core/TextField';
 import { Autocomplete } from '@material-ui/lab';
+import { createFilterOptions } from '@material-ui/lab/Autocomplete';
 import { Button } from '@material-ui/core';
 import CityList  from './city.list.min';
 import CountryList from './countries';
@@ -21,6 +22,7 @@ function Form(){
   let options = [];
   function setOptions(country){
     setcityInputText ("");
+    setcityOptions([]);
 
     if(country !=null){
 
@@ -37,13 +39,18 @@ function Form(){
 
 
   function cityChange(v){
-    setcityInputText(v.name)
-    setSelectedCity(v);
+    /*Checks if the input is not empty before changing states to avoid errors*/
+    if(cityOptions.indexOf(v)!==-1){
+      setcityInputText(v.name)
+      setSelectedCity(v);
+
+    }
   }
 
   function runFetch(){
-    if(selectedCity != 0)
+    if(selectedCity !== 0)
     Fetch.fetchWeather(selectedCity.id,data,setData);
+    setcityInputText("");
   }
 
 
