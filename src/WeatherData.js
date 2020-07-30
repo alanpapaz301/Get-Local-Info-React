@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { DataContext } from "./DataContext";
-import Fetch from "./Fetch.js";
-import Clock from "react-live-clock";
 import {
   WiDayThunderstorm,
   WiNightThunderstorm,
@@ -17,9 +15,8 @@ import {
   WiNightClear,
 } from "react-icons/wi";
 import { IconContext } from "react-icons";
-var tzlookup = require("tz-lookup");
 
-function Card() {
+function WeatherData() {
   const [data, setData] = useContext(DataContext);
   const [weatherIcon, setWeatherIcon] = useState(0);
 
@@ -30,6 +27,7 @@ function Card() {
     return Math.round((number * multi).toFixed(precision + 1)) / multi;
   }
 
+  /*Determines the weather icon to display depending on the conditions and time of day provided by the api request */
   function WeatherIcon() {
     if (data.weather[0].main === "Clear") {
       if (data.weather[0].icon[2] === "d")
@@ -51,58 +49,28 @@ function Card() {
       if (data.weather[0].icon[2] === "d")
         return <WiDaySprinkle id="weatherIcon" />;
       else return <WiNightAltSprinkle id="weatherIcon" />;
-    } 
-    else if (data.weather[0].main === "Thunderstorm") {
+    } else if (data.weather[0].main === "Thunderstorm") {
       if (data.weather[0].icon[2] === "d")
         return <WiDayThunderstorm id="weatherIcon" />;
-      else return <WiNightThunderstorm  id="weatherIcon" />;
-    } 
-    
-    
-    
-    
-    else return null;
+      else return <WiNightThunderstorm id="weatherIcon" />;
+    } else return null;
   }
 
-  /*Displays the data state only if not empty*/
-
-  const ConditionalRender = () => {
-    return data.hasOwnProperty("name") ? (
-      <div className="cardDisplay">
-        <h3 className="cardCity">
-          {data.name} , {data.sys.country}
-        </h3>
-        <div className="localTime">
-          <h3>Local time:</h3>
-          <Clock
-            className="liveClock"
-            format={"HH:mm:ss"}
-            ticking={true}
-            timezone={tzlookup(data.coord.lat, data.coord.lon)}
-          />
-          <h3>({tzlookup(data.coord.lat, data.coord.lon)})</h3>
-        </div>
-        <div id="weatherDisplay">
-          <WeatherIcon />
-          <h3 className="cardContent" id="weatherDescription">
-            {data.weather[0].description}
-          </h3>
-          <h3 className="cardContent">
-            Temperature: {roundFix(data.main.temp - 273.15, 1)}℃
-          </h3>
-          <h3 className="cardContent">
-            Feels like: {roundFix(data.main.feels_like - 273.15, 1)}℃
-          </h3>
-          <h3 className="cardContent">Humidity: {data.main.humidity}%</h3>
-        </div>
-      </div>
-    ) : null;
-  };
-
   return (
-    <div id="cardContainer">
-      <ConditionalRender />
+    <div id="weatherDisplay" className="infoBlock">
+      <WeatherIcon />
+      <h3 className="DataContent" id="weatherDescription">
+        {data.weather[0].description}
+      </h3>
+      <h3 className="DataContent">
+        Temperature: {roundFix(data.main.temp - 273.15, 1)}℃
+      </h3>
+      <h3 className="DataContent">
+        Feels like: {roundFix(data.main.feels_like - 273.15, 1)}℃
+      </h3>
+      <h3 className="DataContent">Humidity: {data.main.humidity}%</h3>
+      <h3 className="DataContent">Wind speed: {data.wind.speed} Meter/sec</h3>
     </div>
   );
 }
-export default Card;
+export default WeatherData;

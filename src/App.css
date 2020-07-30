@@ -1,55 +1,67 @@
 @import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
 
-
-
-#cardContainer,#formContainer{
-display:flex;
-flex-direction: column;
-align-items: center;
-margin-top: 100px;
-
+body {
+  background-color:#121212;
 }
-#cardContainer{
-  margin-bottom: 100px;
-}
-.cardDisplay{
-  border: 1px solid slateblue;
-  width:700px;
+#DataContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  margin-top: 50px;
   text-align: center;
 }
-.liveClock{
+#localInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+#formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  
+}
+
+.infoBlock {
+  border: solid 3px rgb(167, 109, 67); 
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(114, 144, 207);
+}
+.liveClock {
   margin-left: 10px;
 }
-#runBtn{
+#runBtn {
   margin-top: 20px;
 }
-.cardCity{
+.DataCity {
   text-align: center;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 25px;
-  color:rgb(167,109,67);
-
+  font-family: "Work Sans", sans-serif;
+  font-size: 35px;
+  color: rgb(167, 109, 67);
+  font-weight: bold;
 }
-.localTime{
+.localTime {
   align-items: center;
-  height:40px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 20px;
+  height: 40px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
   font-weight: bold;
   justify-content: center;
   display: flex;
   flex-direction: row;
 }
-.cardContent{
-  font-family: 'Work Sans', sans-serif;
-  font-size: 20px;
+.DataContent {
+  font-family: "Work Sans", sans-serif;
+  font-size: 25px;
   font-weight: bold;
-  margin:0;
+  margin: 0;
 }
-#weatherIcon{
-  width:150px;
+#weatherIcon {
+  width: 150px;
   height: auto;
 }
-#weatherDescription{
-  margin-bottom:20px;
+#weatherDescription {
+  margin-bottom: 20px;
 }
