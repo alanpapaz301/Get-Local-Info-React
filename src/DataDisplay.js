@@ -17,38 +17,38 @@ function DataDisplay() {
     return timezoneReturn;
   };
 
-
-
-  
   /*Displays the data state only if not empty*/
+  const DataRender = () => {
+    return data.hasOwnProperty("name") ? (
+      <div>
+        <h3 className="DataCity">
+          {data.name} , {data.sys.country}
+        </h3>
+        <div id="DataContainer">
+          <div id="localInfoContainer" className="infoBlock">
+            <div className="localTime">
+              <h3>Local time:</h3>
+              <Clock
+                className="liveClock"
+                format={"HH:mm:ss"}
+                ticking={true}
+                timezone={tzlookup(data.coord.lat, data.coord.lon)}
+              />
+            </div>
+            <h3 className="DataContent">
+              Timezone: ({tzlookup(data.coord.lat, data.coord.lon)})
+            </h3>
+            <div className="DataContent">
+              <TimezoneUTC />
+            </div>
+          </div>
 
-  return data.hasOwnProperty("name") ? (
-    <div>
-      <h3 className="DataCity">
-        {data.name} , {data.sys.country}
-      </h3>
-      <div id="DataContainer">
-        <div id="localInfoContainer" className="infoBlock">
-          <div className="localTime">
-            <h3>Local time:</h3>
-            <Clock
-              className="liveClock"
-              format={"HH:mm:ss"}
-              ticking={true}
-              timezone={tzlookup(data.coord.lat, data.coord.lon)}
-            />
-          </div>
-          <h3 className="DataContent">
-            Timezone: ({tzlookup(data.coord.lat, data.coord.lon)})
-          </h3>
-          <div className="DataContent">
-            <TimezoneUTC />
-          </div>
+          <WeatherData />
         </div>
-
-        <WeatherData />
       </div>
-    </div>
-  ) : null;;
+    ) : null;
+  };
+
+  return <DataRender />;
 }
 export default DataDisplay;
