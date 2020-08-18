@@ -50,7 +50,7 @@ function Form() {
           id="countryList"
           options={CountryList}
           getOptionLabel={(option) => option.country}
-          style={{ width: 300, backgroundColor: "rgb(114, 144, 207)" }}
+          style={{ width: 300 }}
           renderInput={(params) => (
             <TextField {...params} label="Country" variant="outlined" />
           )}
@@ -66,8 +66,8 @@ function Form() {
           getOptionLabel={(option) => option.name}
           style={{
             width: 300,
-            marginTop: 10,
-            backgroundColor: "rgb(114, 144, 207)",
+            marginTop: 30,
+            
           }}
           renderInput={(params) => (
             <TextField {...params} label="City" variant="outlined" />
@@ -81,7 +81,7 @@ function Form() {
         color="primary"
         onClick={() => runFetch()}
       >
-        Run
+        Get local info!
       </Button>
     </div>
   );

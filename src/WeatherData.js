@@ -58,10 +58,12 @@ function WeatherData() {
 
   return (
     <div id="weatherDisplay" className="infoBlock">
+      <div id="weatherIconDescription">
       <WeatherIcon />
       <h3 className="DataContent" id="weatherDescription">
         {data.weather[0].description}
       </h3>
+      </div>
       <h3 className="DataContent">
         Temperature: {roundFix(data.main.temp - 273.15, 1)}℃
       </h3>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
 
 body {
-  background-color:#121212;
+  background-color:snow;
 }
 #DataContainer {
   display: flex;
@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: start;
   margin-top: 50px;
-  text-align: center;
+  text-align: start;
 }
 #localInfoContainer {
   display: flex;
@@ -22,12 +22,14 @@ body {
   margin-top: 100px;
   
 }
-
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(14px, -15px) scale(0.75) !important;
+}
 .infoBlock {
-  border: solid 3px rgb(167, 109, 67); 
+  border: solid 3px rgb(59, 59, 100); 
   margin: 20px;
   padding: 20px;
-  background-color: rgb(114, 144, 207);
+  
 }
 .liveClock {
   margin-left: 10px;
@@ -48,9 +50,10 @@ body {
   font-family: "Work Sans", sans-serif;
   font-size: 25px;
   font-weight: bold;
-  justify-content: center;
+  justify-content: start;
   display: flex;
   flex-direction: row;
+  
 }
 .DataContent {
   font-family: "Work Sans", sans-serif;
@@ -62,6 +65,10 @@ body {
   width: 150px;
   height: auto;
 }
+#weatherIconDescription{
+  text-align: center;
+}
 #weatherDescription {
   margin-bottom: 20px;
+  color:rgb(167, 109, 67);
 }
