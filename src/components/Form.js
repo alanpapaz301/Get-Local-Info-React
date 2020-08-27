@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import { DataContext } from "./DataContext";
-import Fetch from "./Fetch.js";
+import { DataContext } from "../DataContext";
+import Fetch from "../Fetch.js";
 import TextField from "@material-ui/core/TextField";
 import { Autocomplete } from "@material-ui/lab";
 import { createFilterOptions } from "@material-ui/lab/Autocomplete";
 import { Button } from "@material-ui/core";
-import CityList from "./city.list.min";
-import CountryList from "./countries";
+import CityList from "../city.list.min";
+import CountryList from "../countries";
 
 function Form() {
   const [data, setData] = useContext(DataContext);
