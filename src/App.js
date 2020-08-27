@@ -3,6 +3,7 @@ import "./App.css";
 import { DataProvider } from "./DataContext";
 import DataDisplay from "./DataDisplay.js";
 import Form from "./Form";
+
 function App() {
   const data = useState("");
 

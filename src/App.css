@@ -1,17 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
 
 body {
-  background-color:snow;
+  background-color: rgb(201, 223, 220);
 }
-#DataContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: start;
-  margin-top: 50px;
-  text-align: start;
+
+#containerBackground {
+  background-color: rgba(243, 243, 243, 0.2);
+  width: 80%;
+  min-width: 80vw;
+  margin-bottom: 5%;
+  border: 1px solid snow;
+  border-radius: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
 }
-#localInfoContainer {
+#displayContainer {
+  display: grid;
+  justify-items: stretch;
+  grid-column-gap: 0;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#timeContainer {
   display: flex;
   flex-direction: column;
 }
@@ -19,17 +32,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  
+  margin-top: 50px;
 }
 .MuiInputLabel-outlined.MuiInputLabel-shrink {
   transform: translate(14px, -15px) scale(0.75) !important;
+  margin-top: 20px;
 }
 .infoBlock {
-  border: solid 3px rgb(59, 59, 100); 
   margin: 20px;
   padding: 20px;
-  
+  border-radius: 25px;
+  background-color: rgb(248, 248, 248);
 }
 .liveClock {
   margin-left: 10px;
@@ -40,7 +53,7 @@ body {
 .DataCity {
   text-align: center;
   font-family: "Work Sans", sans-serif;
-  font-size: 35px;
+  font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: rgb(167, 109, 67);
   font-weight: bold;
 }
@@ -48,27 +61,49 @@ body {
   align-items: center;
   height: 40px;
   font-family: "Work Sans", sans-serif;
-  font-size: 25px;
+  font-size: calc(10px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-weight: bold;
   justify-content: start;
   display: flex;
   flex-direction: row;
-  
 }
 .DataContent {
   font-family: "Work Sans", sans-serif;
-  font-size: 25px;
+  font-size: calc(10px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-weight: bold;
   margin: 0;
+}
+#weatherDisplay {
+  text-align: center;
 }
 #weatherIcon {
   width: 150px;
   height: auto;
 }
-#weatherIconDescription{
+#weatherIconDescription {
   text-align: center;
 }
 #weatherDescription {
   margin-bottom: 20px;
-  color:rgb(167, 109, 67);
+  color: rgb(167, 109, 67);
+}
+
+@media (max-width: 1200px) {
+  #displayContainer {
+    display: grid;
+    justify-items: stretch;
+    grid-column-gap: 0;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .infoBlock {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: rgb(248, 248, 248);
+    height: fit-content;
+    align-self: center;
+  }
 }

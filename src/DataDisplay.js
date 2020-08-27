@@ -2,7 +2,9 @@ import React, { useState, useContext } from "react";
 import { DataContext } from "./DataContext";
 import Fetch from "./Fetch.js";
 import WeatherData from "./WeatherData.js";
+
 import Clock from "react-live-clock";
+
 var tzlookup = require("tz-lookup");
 
 function DataDisplay() {
@@ -17,33 +19,43 @@ function DataDisplay() {
     return timezoneReturn;
   };
 
+  const TimeDisplay = () => {
+    return (
+      <div id="timeContainer" className="infoBlock">
+        <div className="localTime">
+          <h3>Local time:</h3>
+          <Clock
+            className="liveClock"
+            format={"HH:mm:ss"}
+            ticking={true}
+            timezone={tzlookup(data.coord.lat, data.coord.lon)}
+          />
+        </div>
+        <h3 className="DataContent">
+          Timezone: ({tzlookup(data.coord.lat, data.coord.lon)})
+        </h3>
+        <div className="DataContent">
+          <TimezoneUTC />
+        </div>
+      </div>
+    );
+  };
+
   /*Displays the data state only if not empty*/
   const DataRender = () => {
     return data.hasOwnProperty("name") ? (
-      <div>
-        <h3 className="DataCity">
+      <div id="containerBackground">
+        <h1 className="DataCity">
           {data.name} , {data.sys.country}
-        </h3>
-        <div id="DataContainer">
-          <div id="localInfoContainer" className="infoBlock">
-            <div className="localTime">
-              <h3>Local time:</h3>
-              <Clock
-                className="liveClock"
-                format={"HH:mm:ss"}
-                ticking={true}
-                timezone={tzlookup(data.coord.lat, data.coord.lon)}
-              />
-            </div>
-            <h3 className="DataContent">
-              Timezone: ({tzlookup(data.coord.lat, data.coord.lon)})
-            </h3>
-            <div className="DataContent">
-              <TimezoneUTC />
-            </div>
-          </div>
+        </h1>
 
+        <div id="displayContainer">
           <WeatherData />
+          <TimeDisplay />
+          <TimeDisplay />
+          <WeatherData />
+          <TimeDisplay />
+          <TimeDisplay />
         </div>
       </div>
     ) : null;

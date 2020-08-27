@@ -65,8 +65,7 @@ function Form() {
           options={cityOptions}
           getOptionLabel={(option) => option.name}
           style={{
-            width: 300,
-            marginTop: 30,
+            width: 300
             
           }}
           renderInput={(params) => (
