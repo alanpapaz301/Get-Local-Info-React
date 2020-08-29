@@ -9,11 +9,11 @@ function Timezone() {
   const TimezoneUTC = () => {
     var timezone = data.timezone / 60 / 60;
     var timezoneReturn;
-    if (data.timezone >= 0) timezoneReturn = "UTC + " + timezone;
-    else timezoneReturn = "UTC " + timezone;
+    if (data.timezone >= 0) timezoneReturn = "UTC + " + timezone
+    else timezoneReturn = "UTC " + timezone
     return (
     <div className="dataContent">
-        {timezoneReturn};
+        {timezoneReturn}
     </div>
     )
   };
