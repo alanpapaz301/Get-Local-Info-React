@@ -17,15 +17,13 @@ function TimeDisplay() {
 
     return (
       <div id="timeContainer" className="infoBlock">
-        <div className="localTime">
-          <h3>Local time:</h3>
+          <h1 className="blockTitle">Local time</h1>
           <Clock
-            className="liveClock"
+            className="dataContent"
             format={"HH:mm:ss"}
             ticking={true}
             timezone={tzlookup(data.coord.lat, data.coord.lon)}
           />
-        </div>
       </div>
     );
   }

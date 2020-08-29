@@ -48,9 +48,9 @@ function WeatherIcon() {
     } else return null;
   };
   return (
-    <div id="weatherIconDescription">
+    <div className="infoBlock" id="weatherIconDescription" >
       <Icon />
-      <h1 id="weatherDescription">
+      <h1 className="blockTitle">
         {data.weather[0].description}
       </h1>
     </div>

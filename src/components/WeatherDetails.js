@@ -14,14 +14,18 @@ function WeatherDetails() {
 
   return (
     <div id="weatherDisplay" className="infoBlock">
-      <h3 className="DataContent">
-        Temperature: {roundFix(data.main.temp - 273.15, 1)}℃
-      </h3>
-      <h3 className="DataContent">
-        Feels like: {roundFix(data.main.feels_like - 273.15, 1)}℃
-      </h3>
-      <h3 className="DataContent">Humidity: {data.main.humidity}%</h3>
-      <h3 className="DataContent">Wind speed: {data.wind.speed} Meter/sec</h3>
+      <h1 className="blockTitle">
+        Temperature:
+      </h1>
+      <h1 className="dataContent">
+        {roundFix(data.main.temp - 273.15, 1)}℃
+      </h1>
+      <h1 className="blockTitle">
+        Feels like: 
+      </h1>
+      <h1 className="dataContent">
+        {roundFix(data.main.feels_like - 273.15, 1)}℃
+      </h1>
     </div>
   );
 }

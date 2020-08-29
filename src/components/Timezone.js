@@ -12,7 +12,7 @@ function Timezone() {
     if (data.timezone >= 0) timezoneReturn = "UTC + " + timezone;
     else timezoneReturn = "UTC " + timezone;
     return (
-    <div className="DataContent">
+    <div className="dataContent">
         {timezoneReturn};
     </div>
     )
@@ -20,10 +20,10 @@ function Timezone() {
 
     return (
       <div id="timezoneContainer" className="infoBlock">
-        <h1 id="timezoneTitle">
+        <h1 className="blockTitle">
           Timezone 
         </h1>
-        <h3 className="DataContent">({tzlookup(data.coord.lat, data.coord.lon)})</h3>
+        <h3 className="dataContent">({tzlookup(data.coord.lat, data.coord.lon)})</h3>
           <TimezoneUTC />
       </div>
     );

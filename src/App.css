@@ -1,39 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
 
 body {
-  background-color: rgb(163, 219, 216);
-}
-
-#containerBackground {
-  background-color: rgba(243, 243, 243, 0.2);
-  width: 80%;
-  min-width: 80vw;
-  margin-bottom: 5%;
-  border: 1px solid snow;
-  border-radius: 25px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 20px;
-}
-#displayContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-#timeContainer,#timezoneContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-#timezoneTitle{
-  text-align: center;
-  font-family: "Work Sans", sans-serif;
-  font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: bold;
-  justify-self: flex-start;
-
+  background-color: rgb(195, 223, 221);
 }
 #formContainer {
   display: flex;
@@ -45,22 +13,69 @@ body {
   transform: translate(14px, -15px) scale(0.75) !important;
   margin-top: 20px;
 }
-.infoBlock,#weatherIconDescription {
+#runBtn {
+  margin-top: 20px;
+}
+#containerBackground {
+  background-color: rgba(243, 243, 243, 0.2);
+  width: 70%;
+  min-width: 80vw;
+  margin-bottom: 5%;
+  border: 1px solid snow;
+  border-radius: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+#displayContainer {
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.dataContent {
+  font-family: "Work Sans", sans-serif;
+  font-size: calc(20px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.blockTitle{
+  text-align: center;
+  font-size: calc(15px + (26 - 10) * ((100vw - 100px) / (1600 - 300)));
+  font-weight: bold;
+  color: rgb(167, 109, 67);
+  margin: 0;
+}
+
+.infoBlock {
   margin: 20px;
   padding: 20px;
   border-radius: 25px;
   background-color: rgb(248, 248, 248);
-  height:20vw;
+  text-align: center;
+  margin: 10px;
+  border-radius: 25px;
+  height: calc(12vw + 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-#weatherIconDescription{
-  font-family: "Work Sans", sans-serif;
-  font-weight: bold;
+
+#humidityTitle{
+ color: rgb(75, 153, 226) !important;
 }
-.liveClock {
-  margin-left: 10px;
+#humidityBar{
+  min-height:20vw;
 }
-#runBtn {
-  margin-top: 20px;
+#weatherIcon {
+  width: 150px;
+  height: auto;
+  align-self:center;
 }
 .cityName {
   text-align: center;
@@ -69,35 +84,10 @@ body {
   color: rgb(167, 109, 67);
   font-weight: bold;
 }
-.localTime {
-  align-items: center;
-  height: 40px;
-  font-family: "Work Sans", sans-serif;
-  font-size: calc(10px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: bold;
-  display: flex;
-  flex-direction: row;
-}
-.DataContent {
-  font-family: "Work Sans", sans-serif;
-  font-size: calc(10px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: bold;
-  margin: 0;
-}
-#weatherDisplay {
-  text-align: center;
-}
-#weatherIcon {
-  width: 150px;
-  height: auto;
-}
-#weatherIconDescription {
-  text-align: center;
-}
-#weatherDescription {
-  margin-bottom: 20px;
-  color: rgb(167, 109, 67);
-}
+
+
+
+
 
 @media (max-width: 1200px) {
   #displayContainer {
