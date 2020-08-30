@@ -59,6 +59,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow:auto;
+  word-wrap: break-word;
+
+
 }
 
 #humidityTitle {
@@ -79,6 +83,9 @@ body {
   color: rgb(167, 109, 67);
   font-weight: bold;
 }
+#timezoneName {
+  overflow: auto;
+}
 
 @media (max-width: 1200px) {
   #containerBackground {
@@ -87,18 +94,18 @@ body {
     margin-top: 20px;
   }
   #displayContainer {
-  
     grid-column-gap: 0;
     grid-template-columns: 1fr 1fr;
   }
   .infoBlock {
     margin: 10px;
   }
+  .dataContent {
+    font-size: calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
 }
 @media (max-width: 400px) {
   #displayContainer {
     grid-template-columns: 0.9fr;
   }
-
-
 }

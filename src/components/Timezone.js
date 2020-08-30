@@ -23,7 +23,7 @@ function Timezone() {
         <h1 className="blockTitle">
           Timezone 
         </h1>
-        <h3 className="dataContent">({tzlookup(data.coord.lat, data.coord.lon)})</h3>
+        <h3 className="dataContent" id="timezoneName">({tzlookup(data.coord.lat, data.coord.lon)})</h3>
           <TimezoneUTC />
       </div>
     );

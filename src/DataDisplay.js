@@ -23,8 +23,8 @@ function DataDisplay() {
           <WeatherIcon />
           <WeatherDetails />
           <Humidity />
-          <TimeDisplay />
           <Timezone />
+          <TimeDisplay />
           <Wind />
         </div>
       </div>
