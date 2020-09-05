@@ -8,7 +8,7 @@ function Wind() {
     return (
       <div id="windContainer" className="infoBlock">
         <h1 className="blockTitle">
-          Wind Speed 
+          Wind Speed:
         </h1>
         <h3 className="dataContent">{data.wind.speed} Meter/sec</h3>
           

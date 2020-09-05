@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
 
 body {
-  background-color: rgb(195, 223, 221);
+  background-color: rgb(184, 226, 223);
 }
 #formContainer {
   display: flex;
@@ -21,8 +21,8 @@ body {
   margin-bottom: 10px;
   border: 1px solid snow;
   border-radius: 25px;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 18%;
+  margin-left: 18%;
   margin-top: 20px;
 }
 #displayContainer {
@@ -55,12 +55,12 @@ body {
   text-align: center;
   margin: 10px;
   border-radius: 25px;
-  height: calc(12vw + 50px);
+  height: calc(10vw + 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow:auto;
   word-wrap: break-word;
+  
 
 
 }
@@ -87,6 +87,15 @@ body {
   overflow: auto;
 }
 
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+.infoBlock:hover,.infoBlock:focus,.infoBlock:active{
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  transition-duration: 500ms;
+}
 @media (max-width: 1200px) {
   #containerBackground {
     margin-right: 1px;
@@ -98,7 +107,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
   .infoBlock {
-    margin: 10px;
+    margin: 20px;
   }
   .dataContent {
     font-size: calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));

@@ -23,9 +23,9 @@ function DataDisplay() {
           <WeatherIcon />
           <WeatherDetails />
           <Humidity />
-          <Timezone />
-          <TimeDisplay />
           <Wind />
+          <TimeDisplay />
+          <Timezone />
         </div>
       </div>
     ) : null;
