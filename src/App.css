@@ -1,75 +1,94 @@
-@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
 
 body {
-  background-color: rgb(184, 226, 223);
+  background-color: #e5ffff;
+  font-family: "Poppins", sans-serif;
 }
+.App {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
 #formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 10rem;
+  align-self: flex-start;
+}
+.autocomplete {
+  width: 15vmax;
 }
 .MuiInputLabel-outlined.MuiInputLabel-shrink {
   transform: translate(14px, -15px) scale(0.75) !important;
   margin-top: 20px;
 }
 #runBtn {
+  background: #3e328c;
   margin-top: 20px;
 }
-#containerBackground {
-  background-color: rgba(243, 243, 243, 0.2);
-  margin-bottom: 10px;
-  border: 1px solid snow;
-  border-radius: 25px;
-  margin-right: 18%;
-  margin-left: 18%;
-  margin-top: 20px;
+
+#emptyDisplayContainer {
+  width: 50vmax;
+  text-align: center;
 }
 #displayContainer {
+  margin: 0 auto;
+  width: 50vmax;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  flex: 2;
 }
 .dataContent {
-  font-family: "Work Sans", sans-serif;
-  font-size: calc(20px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-weight: bold;
+  font-size: 2.8vmin;
+  font-weight: 400;
   margin: 0;
   text-align: center;
 }
 .blockTitle {
   text-align: center;
-  font-size: calc(15px + (26 - 10) * ((100vw - 100px) / (1600 - 300)));
+  font-size: 3.2vmin;
   font-weight: bold;
-  color: rgb(167, 109, 67);
+  color: #3e328c;
   margin: 0;
 }
 
 .infoBlock {
-  margin: 20px;
-  padding: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(1rem);
+  margin: 1vmin;
+  padding: 2vmin;
+  border: 0.5px solid #3e328c;
   border-radius: 25px;
-  background-color: rgb(248, 248, 248);
   text-align: center;
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 10px;
   height: calc(10vw + 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
-  
-
-
 }
 
 #humidityTitle {
-  color: rgb(75, 153, 226) !important;
+  color: #3e328c;
 }
 #humidityBar {
   min-height: 20vw;
+  background: #877ebf;
 }
 #weatherIcon {
   width: 150px;
@@ -78,43 +97,57 @@ body {
 }
 .cityName {
   text-align: center;
-  font-family: "Work Sans", sans-serif;
   font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  color: rgb(167, 109, 67);
+  color: #3e328c;
   font-weight: bold;
 }
 #timezoneName {
   overflow: auto;
 }
 
-.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
 }
-.infoBlock:hover,.infoBlock:focus,.infoBlock:active{
+.infoBlock:hover,
+.infoBlock:focus,
+.infoBlock:active {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
+}
+.separator {
+  height: 100%;
+  width: 0.3rem;
+  background: #d1d9ff;
 }
 @media (max-width: 1200px) {
-  #containerBackground {
-    margin-right: 1px;
-    margin-left: 1px;
-    margin-top: 20px;
+  .App {
+    flex-direction: column;
   }
+  .separator {
+    height: 5px;
+    width: 100%;
+  }
+  #formContainer {
+    align-self: center;
+  }
+  .autocomplete {
+    width: 280px;
+  }
+
   #displayContainer {
-    grid-column-gap: 0;
+    margin-top: 20px;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .blockTitle,
+  .dataContent {
+    font-size: 2.2vmax;
   }
   .infoBlock {
-    margin: 20px;
-  }
-  .dataContent {
-    font-size: calc(15px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
-  }
-}
-@media (max-width: 400px) {
-  #displayContainer {
-    grid-template-columns: 0.9fr;
+    margin: 5px;
   }
 }

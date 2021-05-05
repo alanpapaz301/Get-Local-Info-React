@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { DataContext } from "./DataContext";
-import Fetch from "./Fetch.js";
 import WeatherIcon from "./components/WeatherIcon.js";
 import WeatherDetails from "./components/WeatherDetails.js";
 import Wind from "./components/Wind";
@@ -14,7 +13,7 @@ function DataDisplay() {
   /*Displays the data state only if not empty*/
   const DataRender = () => {
     return data.hasOwnProperty("name") ? (
-      <div id="containerBackground">
+      <div>
         <h1 className="cityName">
           {data.name} , {data.sys.country}
         </h1>
@@ -22,13 +21,17 @@ function DataDisplay() {
         <div id="displayContainer">
           <WeatherIcon />
           <WeatherDetails />
-          <Humidity />
           <Wind />
+          <Humidity />
           <TimeDisplay />
           <Timezone />
         </div>
       </div>
-    ) : null;
+    ) : (
+      <div id="emptyDisplayContainer">
+        <h1>Choose a country and city to see the magic</h1>
+      </div>
+    );
   };
 
   return <DataRender />;

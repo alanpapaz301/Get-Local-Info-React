@@ -11,6 +11,7 @@ function App() {
     <DataProvider>
       <div className="App">
         <Form />
+        <span className="separator"></span>
         <DataDisplay />
       </div>
     </DataProvider>

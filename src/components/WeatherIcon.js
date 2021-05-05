@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { DataContext } from "../DataContext";
 import {
   WiDayThunderstorm,
@@ -13,8 +13,9 @@ import {
   WiNightAltCloudy,
   WiDaySunny,
   WiNightClear,
+  WiDayFog,
+  WiFog,
 } from "react-icons/wi";
-import { IconContext } from "react-icons";
 
 function WeatherIcon() {
   const [data, setData] = useContext(DataContext);
@@ -45,14 +46,15 @@ function WeatherIcon() {
       if (data.weather[0].icon[2] === "d")
         return <WiDayThunderstorm id="weatherIcon" />;
       else return <WiNightThunderstorm id="weatherIcon" />;
+    } else if (data.weather[0].main === "Mist") {
+      if (data.weather[0].icon[2] === "d") return <WiDayFog id="weatherIcon" />;
+      else return <WiFog id="weatherIcon" />;
     } else return null;
   };
   return (
-    <div className="infoBlock" id="weatherIconDescription" >
+    <div className="infoBlock" id="weatherIconDescription">
       <Icon />
-      <h1 className="blockTitle">
-        {data.weather[0].description}
-      </h1>
+      <h1 className="blockTitle">{data.weather[0].description}</h1>
     </div>
   );
 }
