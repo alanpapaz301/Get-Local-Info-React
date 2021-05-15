@@ -35,28 +35,28 @@ body {
 }
 
 #emptyDisplayContainer {
-  width: 50vmax;
+  width: 55vmax;
   text-align: center;
 }
 #displayContainer {
   margin: 0 auto;
-  width: 50vmax;
+  width: 55vmax;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
   justify-content: center;
   align-items: center;
   margin-top: 30px;
   flex: 2;
 }
 .dataContent {
-  font-size: 2.8vmin;
+  font-size: 2.1vmin;
   font-weight: 400;
   margin: 0;
   text-align: center;
 }
 .blockTitle {
   text-align: center;
-  font-size: 3.2vmin;
+  font-size: 2.5vmin;
   font-weight: bold;
   color: #3e328c;
   margin: 0;
@@ -81,6 +81,7 @@ body {
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
+  overflow: auto;
 }
 
 #humidityTitle {
@@ -100,9 +101,6 @@ body {
   font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: #3e328c;
   font-weight: bold;
-}
-#timezoneName {
-  overflow: auto;
 }
 
 .hvr-float:hover,
@@ -133,6 +131,7 @@ body {
   }
   #formContainer {
     align-self: center;
+    margin-top: 1rem;
   }
   .autocomplete {
     width: 280px;
