@@ -2,11 +2,13 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #e5ffff;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 .App {
   display: flex;
@@ -76,12 +78,12 @@ body {
   text-align: center;
   margin: 10px;
   border-radius: 10px;
-  height: calc(10vw + 50px);
+  height: calc(12vw + 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   word-wrap: break-word;
-  overflow: auto;
+  overflow: hidden;
 }
 
 #humidityTitle {
@@ -103,19 +105,6 @@ body {
   font-weight: bold;
 }
 
-.hvr-float:hover,
-.hvr-float:focus,
-.hvr-float:active {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
-}
-.infoBlock:hover,
-.infoBlock:focus,
-.infoBlock:active {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
-  transition-duration: 1000ms;
-}
 .separator {
   height: 100%;
   width: 0.3rem;
@@ -126,17 +115,20 @@ body {
     flex-direction: column;
   }
   .separator {
+    margin-top: 1rem;
     height: 5px;
     width: 100%;
   }
   #formContainer {
     align-self: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .autocomplete {
     width: 280px;
   }
-
+  .cityName {
+    margin-top: 2rem;
+  }
   #displayContainer {
     margin-top: 20px;
     grid-template-columns: 1fr 1fr;
@@ -148,5 +140,21 @@ body {
   }
   .infoBlock {
     margin: 5px;
+  }
+}
+@media (max-width: 450px) {
+  .App {
+    height: auto;
+  }
+  #displayContainer {
+    grid-template-columns: 1fr;
+  }
+  #emptyDisplayContainer {
+    width: auto;
+  }
+  .infoBlock {
+    padding: 15px;
+    height: 10rem;
+    font-size: 2rem;
   }
 }
